@@ -78,7 +78,7 @@ class GenereateInvoice extends React.Component{
             <Row>
             <Card>
                 <CardBody>
-                <h3 style={{color:"#e14eca", textTransform:"capitalize", fontWeight:"500"}}>Genereate Invoice </h3>
+                <h3 style={{color:"#3578E5", textTransform:"capitalize", fontWeight:"500"}}>Genereate Invoice </h3>
                   <Form>
                     <Row>
                       <Col className="pr-md-1" md="6">
@@ -140,7 +140,7 @@ class GenereateInvoice extends React.Component{
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Button   type="submit" color="primary" onClick={this.submitHandler}  > Add Domestic  Flight</Button >
+                    <Button   type="submit" color="success" onClick={this.submitHandler}  > Add Domestic  Flight</Button >
                   </Form>
                 </CardBody>
             </Card>
@@ -154,7 +154,7 @@ class GenereateInvoice extends React.Component{
                 <CardBody>
                   <div className="internationalFlight">
                     <div>
-                      <h1 style={{color:"#e14eca", textTransform:"capitalize", fontWeight:"600"}}>Generated Invoice <span style={{fontSize:"14px"}}>( All )</span></h1>
+                      <h1 style={{color:"#3578E5", textTransform:"capitalize", fontWeight:"600"}}>Generated Invoice <span style={{fontSize:"14px"}}>( All )</span></h1>
                     </div>
                     <Table className="tablesorter" responsive>
                       <thead className="text-primary">
@@ -176,10 +176,10 @@ class GenereateInvoice extends React.Component{
                             <td > {single._id}</td>
                             
                             <td > <div class="dropdown">
-                                <a cla ss="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <Button color="primary" size="sm">Action</Button>
+                                <a cla ss="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <Button color="success" size="sm">Action</Button>
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style={{background:"#e14eca" }}>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style={{background:"#3578E5" }}>
                                   < p onClick={this.deleteHandler.bind(this, single._id)} style={{fontSize:"18px" , padding:"7px", cursor:"pointer"}}>
                                   Delete
                                   </p>

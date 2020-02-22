@@ -60,8 +60,8 @@ class InternationalFlight  extends React.Component {
         this.setState({
           message:""
         })
-        window.location.href=('/admin/edit-flight')
-      }, 1500);
+        window.location.href=('/admin/edit-international-flight')
+      }, 500);
     })
     .catch(err=>{
       this.setState({
@@ -79,12 +79,12 @@ class InternationalFlight  extends React.Component {
                     <Row>
                       <Col className="pr-md-1" md="6">
                         <FormGroup>
-                          <label>DATE & TIME</label>
+                          <label>DATE</label>
                           <Input
                             name="dateTime"
                             onChange={this.changeHandler}
-                            placeholder="Enter Date & time"
-                            type="date"
+                            placeholder="Enter Date "
+                            type="dateOnly"
                           />
                           <p className="text-danger">
                             {this.state.err.dateTime ?
@@ -159,11 +159,30 @@ class InternationalFlight  extends React.Component {
                             <label>ORIGIN</label>
                           <select name="origin" onChange={this.changeHandler} style={{background:"#27293d"}} className="form-control">
                               <option>Choose a  Origin</option>
-                              <option value="item" >item</option>
-                              <option value="item" >item</option>
-                              <option value="item" >item</option>
-                              <option value="item" >item</option>
-                              <option value="item" >item</option>
+                              <option value="ASV" >ASV</option>
+                              <option value="EDL" >EDL</option>
+                              <option value="GAS" >GAS</option>
+                              <option value="GGM" >GGM</option>
+                              <option value="HOA" >HOA</option>
+                              <option value="ILU" >ILU</option>
+                              <option value="JJM" >JJM</option>
+                              <option value="KEY" >KEY</option>
+                              <option value="KIS" >KIS</option>
+                              <option value="KTL" >KTL</option>
+                              <option value="LAU" >LAU</option>
+                              <option value="LKG" >LKG</option>
+                              <option value="LOK" >LOK</option>
+                              <option value="MBA" >MBA</option>
+                              <option value="MRE" >MRE</option>
+                              <option value="MYD" >MYD</option>
+                              <option value="NBO" >NBO</option>
+                              <option value="NYE" >NYE</option>
+                              <option value="NYK" >NYK</option>
+                              <option value="OYL" >OYL</option>
+                              <option value="UAS" >UAS</option>
+                              <option value="UKA" >UKA</option>
+                              <option value="WIL" >WIL</option>
+                              <option value="WJR" >WJR</option>
                           </select>
                         </FormGroup>
                       </Col>
@@ -172,11 +191,30 @@ class InternationalFlight  extends React.Component {
                             <label>DESTINATION</label>
                           <select name='destination' onChange={this.changeHandler}  style={{background:'#27293d'}} className="form-control">
                               <option>Choose a  Destination</option>
-                              <option  value="item" >item</option>
-                              <option  value="item" >item</option>
-                              <option  value="item" >item</option>
-                              <option  value="item" >item</option>
-                              <option  value="item" >item</option>
+                              <option value="ASV" >ASV</option>
+                              <option value="EDL" >EDL</option>
+                              <option value="GAS" >GAS</option>
+                              <option value="GGM" >GGM</option>
+                              <option value="HOA" >HOA</option>
+                              <option value="ILU" >ILU</option>
+                              <option value="JJM" >JJM</option>
+                              <option value="KEY" >KEY</option>
+                              <option value="KIS" >KIS</option>
+                              <option value="KTL" >KTL</option>
+                              <option value="LAU" >LAU</option>
+                              <option value="LKG" >LKG</option>
+                              <option value="LOK" >LOK</option>
+                              <option value="MBA" >MBA</option>
+                              <option value="MRE" >MRE</option>
+                              <option value="MYD" >MYD</option>
+                              <option value="NBO" >NBO</option>
+                              <option value="NYE" >NYE</option>
+                              <option value="NYK" >NYK</option>
+                              <option value="OYL" >OYL</option>
+                              <option value="UAS" >UAS</option>
+                              <option value="UKA" >UKA</option>
+                              <option value="WIL" >WIL</option>
+                              <option value="WJR" >WJR</option>
                           </select>
                         </FormGroup>
                       </Col>
@@ -269,7 +307,7 @@ class InternationalFlight  extends React.Component {
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Button onClick={this.submitHandler}  color="primary" > 
+                    <Button onClick={this.submitHandler}  color="success" > 
                              {this.state.message?
                              "Creating...":
                              "Add International Flight"

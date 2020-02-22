@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import EditDemosticFlight from './EditDomesticFlightModal'
 import EditInternationalModal from './EditInternationalModal'
@@ -19,13 +21,13 @@ import DeleteModal from "./DeleteModal";
 const tipStyle={
     color: "white",
     fontSize: "10px",
-    background: "#e14eca",
+    background: "#3578E5",
     borderRadius: "3px",
     marginLeft:"5px",
     padding: "0  7px",
     cursor:"pointer"
 }
-const EditFlight =()=>{
+const EditDomesticFlight=()=>{
   const [internationalFlieht , setInternationalFlieht]=useState([])
     const [domesticFlight , setDomesticFlieht]=useState([])
     useEffect(()=>{
@@ -65,7 +67,7 @@ const EditFlight =()=>{
     const deleteInternationalFlight =(id)=>{
       Axios.get('http://localhost:5000/api/delete-international-flight/'+id)
       .then(flight=>{
-        window.location.href=('/admin/edit-flight')
+        window.location.href=('/admin/edit-international-flight')
 
       })
       .catch(err=>{
@@ -75,7 +77,7 @@ const EditFlight =()=>{
     const deleteDomesticFlight =(id)=>{
       Axios.get('http://localhost:5000/api/delete-domestic-flight/'+id)
       .then(flight=>{
-        window.location.href=('/admin/edit-flight')
+        window.location.href=('/admin/edit-domestic-flight')
       })
       .catch(err=>{
         console.log(err)
@@ -85,71 +87,15 @@ const EditFlight =()=>{
       <>
         <div className="content">
          
-          <Row>
-            <Col md="12">
-              <Card>
-                <CardBody>
-                  <div className="internationalFlight">
-                    <div>
-                      <h1 style={{color:"#e14eca", textTransform:"capitalize", fontWeight:"600"}}>International Flight <span style={{fontSize:"14px"}}>( All )</span></h1>
-                    </div>
-                    <Table className="tablesorter  pb-5 mb-5" responsive>
-                      <thead className="text-primary">
-                        <tr>
-                          <th>Added time</th>
-                          <th>Tail Number </th>
-                          <th>Date & Time  </th>
-                          <th>Flight ID </th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {internationalFlieht.map((single)=>{
-                       return(
-                         
-                          <tr>
-                            <td> {single.addedTime} </td>
-                            <td > {single.tailNumber} </td>
-                            <td > {single.dateTime} </td>
-                            <td > {single._id} 
-                                <span title="Flight situation" style={tipStyle}>
-                                    {iterator(single)}
-                                </span> 
-                            </td>
-                            <td > <div class="dropdown">
-                                <a cla ss="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <Button color="primary" size="sm">Action</Button>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style={{background:"#e14eca" }}>
-                                  <span  class="dropdown-item " style={{color:"white"}}>
-                                    <EditInternationalModal   flight={single}/>
-                                  </span>
-                                  <a class="dropdown-item "style={{color:"white" , fontSize:"18px"}} href="#">
-                                  <DeleteModal flight={single} deleteFunction={deleteInternationalFlight}/>
-                                  </a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr> 
-                       )
-                        })}
-                        <div className="p-5"></div>
-                      </tbody>
-                    </Table>
-                  </div>
-                </CardBody>
-              </Card>
-            </Col>
-            </Row>
             <Row>
             <Card>
                 <CardBody>
                   <div>
                     <div>
-                      <h1 style={{color:"#e14eca", textTransform:"capitalize", fontWeight:"600"}}>Demostic Flight <span style={{fontSize:"14px"}}> ( All )</span></h1>
+                      <h1 style={{color:"#3578E5", textTransform:"capitalize", fontWeight:"600"}}>Demostic Flight <span style={{fontSize:"14px"}}> ( All )</span></h1>
                     </div>
                     <Table className="tablesorter  pb-5 mb-5" responsive>
-                      <thead className="text-primary">
+                      <thead className="text-success">
                         <tr>
                           <th>Added time</th>
                           <th>Tail Number </th>
@@ -173,13 +119,13 @@ const EditFlight =()=>{
                             </td>
                             <td > <div class="dropdown">
                                 <a cla ss="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <Button color="primary" size="sm">Action</Button>
+                                  <Button color="success" size="sm">Action</Button>
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style={{background:"#e14eca" }}>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style={{background:"#3578E5" }}>
                                   <a class="dropdown-item " style={{color:"white"}} href="#">
                                     <EditDemosticFlight flight={single}/>
                                   </a>
-                                  <a class="dropdown-item "  flight={single} style={{color:"white"}} href="#">
+                                  <a class="dropdown-item " style={{color:"white" , fontSize:"18px"}}  flight={single} href="#">
 
                                   <DeleteModal flight={single} deleteFunction={deleteDomesticFlight}/>
                                     
@@ -202,4 +148,4 @@ const EditFlight =()=>{
     );
 }
 
-export default EditFlight;
+export default EditDomesticFlight

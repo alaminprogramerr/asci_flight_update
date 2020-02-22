@@ -22,7 +22,7 @@ const DeleteModal = (props) => {
       </p>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>
-          <h2 className="text-danger">
+          <h2 className="text-success">
           Delete Flight
           </h2>
         </ModalHeader>
@@ -32,7 +32,7 @@ const DeleteModal = (props) => {
           </h5>
         </ModalBody>
         <ModalFooter>
-          <Button color="warning" onClick={deleteDone}>Delete</Button>{' '}
+          <Button color="success" onClick={deleteDone}>Delete</Button>{' '}
           <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>

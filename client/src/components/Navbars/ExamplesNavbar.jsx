@@ -76,7 +76,7 @@ class PagesNavbar extends React.Component {
               title="Designed and Coded by Creative Tim"
               tag={Link}
             >
-              <span>ACIS</span>
+              <span></span>
             </NavbarBrand>
             <button
               aria-expanded={this.state.collapseOpen}
@@ -98,8 +98,8 @@ class PagesNavbar extends React.Component {
             <div className="navbar-collapse-header">
               <Row>
                 <Col className="collapse-brand" xs="6">
-                  <a href="#pablo" onClick={e => e.preventDefault()}>
-                  ACIS
+                  <a style={{color:"white"}} href="#pablo " onClick={e => e.preventDefault()}>
+                  ACIS 
                   </a>
                 </Col>
                 <Col className="collapse-close text-right" xs="6">
@@ -115,44 +115,8 @@ class PagesNavbar extends React.Component {
             </div>
             <Nav navbar>
               <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://twitter.com"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Follow us on Twitter"
-                >
-                  <i className="fab fa-twitter" />
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-              </NavItem>
-              <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://www.facebook.com"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Like us on Facebook"
-                >
-                  <i className="fab fa-facebook-square" />
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-              </NavItem>
-              <NavItem className="p-0">
-                <NavLink
-                  data-placement="bottom"
-                  href="https://www.instagram.com"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Follow us on Instagram"
-                >
-                  <i className="fab fa-instagram" />
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} to="/">
-                  Back to Home
+                <NavLink style={{fontSize:'30px',fontWeight:'bold',fontFamily:'monospace'}}>
+                 ACIS
                 </NavLink>
               </NavItem>
             </Nav>

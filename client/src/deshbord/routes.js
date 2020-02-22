@@ -2,9 +2,10 @@ import Dashboard from "./views/Dashboard.jsx";
 import TableList from "./views/TableList.jsx";
 import UserProfile from "./views/UserProfile.jsx";
 import AddFlight from './views/addFlight/AddFlight'
-import EditFlight from './views/EditFlight/EditFlight'
+import EditInternationalFlight from './views/EditFlight/EditInternationalFlight'
 import GenerateInvoice from './views/GenerateInvoice'
 import FlightAnalytics from './views/FlightAnalytics'
+import EditDomesticFlight from "./views/EditFlight/EditDomesticFlight.js";
 
 
 
@@ -26,11 +27,19 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/edit-flight",
-    name: "Edit Flight",
+    path: "/edit-international-flight",
+    name: "Edit International Flight",
     rtlName: "قائمة الجدول",
     icon: "tim-icons icon-pencil",
-    component: EditFlight,
+    component: EditInternationalFlight,
+    layout: "/admin"
+  },
+  {
+    path: "/edit-domestic-flight",
+    name: "Edit Domestic Flight",
+    rtlName: "قائمة الجدول",
+    icon: "tim-icons icon-pencil",
+    component: EditDomesticFlight,
     layout: "/admin"
   },
   {
@@ -48,14 +57,6 @@ var routes = [
     icon: "tim-icons icon-send",
     component: FlightAnalytics,
     layout: "/admin"
-  },
-  {
-    path: "/user-profile",
-    name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: "tim-icons icon-single-02",
-    component: UserProfile,
-    layout: "/admin"
-  },
+  }
 ];
 export default routes;

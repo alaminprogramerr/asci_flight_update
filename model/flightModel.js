@@ -3,8 +3,7 @@ const Schema= mongoose.Schema
 const internationalFlightSchema= new Schema({
     addedTime:String,
     dateTime:{
-        type:String, 
-        required:true
+        type:String,
     },
     tailNumber:{
         type:String
@@ -28,7 +27,7 @@ const internationalFlightSchema= new Schema({
         type:String
     },
     entryWayPoint:{
-        type:String,
+        type:String
     },
     exitWayPoint:{
         type:String
@@ -40,12 +39,10 @@ const internationalFlightModel= mongoose.model('internationalFlightModel', inter
 const domesticFlightSchema= new Schema({
     addedTime:String,
     dateTime:{
-        type:String, 
-        required:true
+        type:String,
     },
     tailNumber:{
-        type:String,
-        required:true
+        type:String
     },
     operator:{
         type:String
@@ -64,12 +61,6 @@ const domesticFlightSchema= new Schema({
     },
     destination:{
         type:String
-    },
-    entryWayPoint:{
-        type:String,
-    },
-    exitWayPoint:{
-        String
     }
 })
 const domesticFlightModel= mongoose.model('domesticFlightModel', domesticFlightSchema)

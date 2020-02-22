@@ -13,10 +13,7 @@ class Footer extends React.Component {
         <Container fluid>
           <Nav>
             <NavItem>
-              <NavLink style={{fontSize:"30px", color:"#e14eca"}} href="">ASIC</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="">About Us</NavLink>
+              <NavLink style={{fontSize:"30px", color:"#3578E5"}} href="">ACIS</NavLink>
             </NavItem>
           </Nav>
         </Container>

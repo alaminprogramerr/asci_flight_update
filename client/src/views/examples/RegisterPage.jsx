@@ -117,7 +117,7 @@ class RegisterPage extends React.Component {
                       <CardHeader>
                         <CardImg
                           alt="..."
-                          src={require("assets/img/square-purple-1.png")}
+                          src={require("assets/img/square1.png")}
                         />
                         <CardTitle tag="h4">log in </CardTitle>
                       </CardHeader>
@@ -175,7 +175,7 @@ class RegisterPage extends React.Component {
                         </Form>
                       </CardBody>
                       <CardFooter>
-                        <Button onClick={this.loginControler} className="btn-round" color="primary" size="lg">
+                        <Button onClick={this.loginControler} className="btn-round" color="success" size="lg">
                               Login
                         </Button>
                         <p style={{fontSize:"18px"}} className="text-danger">

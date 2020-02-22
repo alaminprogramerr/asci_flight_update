@@ -30,18 +30,12 @@ class App extends React.Component{
   return(
   <BrowserRouter>
     <Switch>
-      <Route path="/admin" render={props => <AdminLayout {...props} />} />
-      
-      <Route path="/home" render={props => <Index {...props} />} />
-      <Route
-        path="/landing-page"
-        render={props => <LandingPage {...props} />}
-      />
       <Route
         path="/login-page"
         render={props => <RegisterPage {...props} />}
       />
-      <Redirect from="/" to="/home" />
+      <Route path="/admin" render={props => <AdminLayout {...props} />} />
+      <Redirect from="/" to="/login-page" />
     </Switch>
   </BrowserRouter>
   )

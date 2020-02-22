@@ -23,7 +23,7 @@ const EditDomesticModal = (props) => {
         setDoneBTN('Flight Updating . . .')
         setTimeout(() => {
           setDoneBTN('Done')
-          window.location.href=('/admin/edit-flight')
+          window.location.href=('/admin/edit-domestic-flight')
         }, 1500);
 
       })
@@ -31,14 +31,14 @@ const EditDomesticModal = (props) => {
     return (
         <div>
             <Form inline onSubmit={(e) => e.preventDefault()}>
-                <p onClick={toggle}>Edit</p>
+                <p style={{fontSize:"18px" , color:"white", cursor:"pointer" ,width: "100%",fontSize: "18px" , padding:"15px" , margin:"-15px"}} onClick={toggle}>Edit</p>
             </Form>
             <Modal returnFocusAfterClose={focusAfterClose} isOpen={open}>
                 <ModalBody>
                     
                   <Form>
                     <Row>
-                      <h3 style={{color:"#e14eca", textTransform:"capitalize", fontWeight:"600"}}> Edit International Flight</h3>
+                      <h3 style={{color:"#3578E5", textTransform:"capitalize", fontWeight:"600"}}> Edit International Flight</h3>
                         <Col className="pr-md-1" md="6">
                           <FormGroup>
                             <label>DATE & TIME</label>
@@ -48,7 +48,6 @@ const EditDomesticModal = (props) => {
                               onChange={changeHandler}
                               placeholder="Enter Date & time"
                               className="placeColorBlack"
-                              type="date"
                               defaultValue={existingFlightInfo.dateTime}
                             />
                           </FormGroup>
@@ -122,13 +121,32 @@ const EditDomesticModal = (props) => {
                       <Col className="pr-md-1" md="6">
                         <FormGroup>
                             <label>ORIGIN</label>
-                          <select defaultValue={existingFlightInfo.origin} name="origin" onChange={changeHandler} style={{background:"white"  , color:"black"}} className="form-control placeColorBlack">
+                          <select defaultValue="{existingFlightInfo.origin}" name="origin" onChange={changeHandler} style={{background:"white"  , color:"black"}} className="form-control placeColorBlack">
                               <option>Choose a  Origin</option>
-                              <option value="item" >item</option>
-                              <option value="item" >item</option>
-                              <option value="item" >item</option>
-                              <option value="item" >item</option>
-                              <option value="item" >item</option>
+                              <option value="ASV" >ASV</option>
+                              <option value="EDL" >EDL</option>
+                              <option value="GAS" >GAS</option>
+                              <option value="GGM" >GGM</option>
+                              <option value="HOA" >HOA</option>
+                              <option value="ILU" >ILU</option>
+                              <option value="JJM" >JJM</option>
+                              <option value="KEY" >KEY</option>
+                              <option value="KIS" >KIS</option>
+                              <option value="KTL" >KTL</option>
+                              <option value="LAU" >LAU</option>
+                              <option value="LKG" >LKG</option>
+                              <option value="LOK" >LOK</option>
+                              <option value="MBA" >MBA</option>
+                              <option value="MRE" >MRE</option>
+                              <option value="MYD" >MYD</option>
+                              <option value="NBO" >NBO</option>
+                              <option value="NYE" >NYE</option>
+                              <option value="NYK" >NYK</option>
+                              <option value="OYL" >OYL</option>
+                              <option value="UAS" >UAS</option>
+                              <option value="UKA" >UKA</option>
+                              <option value="WIL" >WIL</option>
+                              <option value="WJR" >WJR</option>
                           </select>
                         </FormGroup>
                       </Col>
@@ -137,11 +155,30 @@ const EditDomesticModal = (props) => {
                             <label>DESTINATION</label>
                           <select name='destination' defaultValue={existingFlightInfo.destination} onChange={changeHandler}  style={{background:"white"  , color:"black"}}className="form-control placeColorBlack">
                               <option>Choose a  Destination</option>
-                              <option  value="item" >item</option>
-                              <option  value="item" >item</option>
-                              <option  value="item" >item</option>
-                              <option  value="item" >item</option>
-                              <option  value="item" >item</option>
+                              <option value="ASV" >ASV</option>
+                              <option value="EDL" >EDL</option>
+                              <option value="GAS" >GAS</option>
+                              <option value="GGM" >GGM</option>
+                              <option value="HOA" >HOA</option>
+                              <option value="ILU" >ILU</option>
+                              <option value="JJM" >JJM</option>
+                              <option value="KEY" >KEY</option>
+                              <option value="KIS" >KIS</option>
+                              <option value="KTL" >KTL</option>
+                              <option value="LAU" >LAU</option>
+                              <option value="LKG" >LKG</option>
+                              <option value="LOK" >LOK</option>
+                              <option value="MBA" >MBA</option>
+                              <option value="MRE" >MRE</option>
+                              <option value="MYD" >MYD</option>
+                              <option value="NBO" >NBO</option>
+                              <option value="NYE" >NYE</option>
+                              <option value="NYK" >NYK</option>
+                              <option value="OYL" >OYL</option>
+                              <option value="UAS" >UAS</option>
+                              <option value="UKA" >UKA</option>
+                              <option value="WIL" >WIL</option>
+                              <option value="WJR" >WJR</option>
                           </select>
                         </FormGroup>
                       </Col>
@@ -149,8 +186,8 @@ const EditDomesticModal = (props) => {
                   </Form>
                 </ModalBody>
                 <ModalFooter className="d-flex">
-                    <Button color="primary" onClick={submitHandler}> {doneBTN} </Button>
-                    <Button color="primary" onClick={toggle}>Cancel</Button>
+                    <Button color="success" onClick={submitHandler}> {doneBTN} </Button>
+                    <Button color="success" onClick={toggle}>Cancel</Button>
                 </ModalFooter>
             </Modal>
         </div>

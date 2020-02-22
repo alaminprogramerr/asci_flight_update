@@ -19,7 +19,7 @@ class Footer extends React.Component {
         <Container>
           <Row>
             <Col md="3">
-              <h1 className="title">ACIS</h1>
+              <h1 className="title">ACIS </h1>
             </Col>
             <Col md="3">
               {/* <Nav>
@@ -55,7 +55,7 @@ class Footer extends React.Component {
               </Nav> */}
             </Col>
             <Col md="3">
-              <h3 className="title">Follow us:</h3>
+              {/* <h3 className="title">Follow us:</h3>
               <div className="btn-wrapper profile">
                 <Button
                   className="btn-icon btn-neutral btn-round btn-simple"
@@ -93,7 +93,7 @@ class Footer extends React.Component {
                 <UncontrolledTooltip delay={0} target="tooltip318450378">
                   Follow us
                 </UncontrolledTooltip>
-              </div>
+              </div> */}
             </Col>
           </Row>
         </Container>

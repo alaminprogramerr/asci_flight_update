@@ -11,16 +11,16 @@ const createInternationalFlight = (req, res)=>{
     }
     new internationalFlightModel({
         addedTime:new Date().toDateString(),
-        dateTime:dateTime,
+        dateTime:dateTime ,
         tailNumber:tailNumber,
-        operator:operator,
-        icao:icao,
-        aircraft:aircraft,
-        callsign:callsign,
-        origin:origin,
-        destination:destination,
-        entryWayPoint:entryWayPoint,
-        exitWayPoint:exitWayPoint
+        operator:operator ,
+        icao:icao, 
+        aircraft:aircraft ,
+        callsign:callsign, 
+        origin:origin , 
+        destination:destination ,
+        entryWayPoint:entryWayPoint , 
+        exitWayPoint:exitWayPoint,
     }).save()
     .then(flight=>{
         res.status(200).json({message:"International flight Created ", flight:flight})
@@ -44,21 +44,22 @@ const getInternationalFlight= (req, res)=>{
 }
 
 const editInternationalFlight = (req, res)=>{
-    let {operator,icao,aircraft,callsign,origin,destination,entryWayPoint,exitWayPoint}= req.body
+    let {dateTime, tailNumber,operator,icao,aircraft,callsign,origin,destination,entryWayPoint,exitWayPoint}= req.body
     if(!req.params.id){
         return res.status(400).json({message:"No id flight founded in params"})
     }
     internationalFlightModel.findByIdAndUpdate(req.params.id)
     .then(flight=>{
-
-        flight.operator=operator
-        flight.icao=icao
-        flight.aircraft=aircraft
-        flight.callsign=callsign
-        flight.origin=origin
-        flight.destination=destination
-        flight.entryWayPoint=entryWayPoint
-        flight.exitWayPoint=exitWayPoint
+        dateTime?flight.dateTime=dateTime:''
+        tailNumber?flight.tailNumber= tailNumber:''
+        operator?flight.operator=operator:''
+        icao?flight.icao=icao:'' 
+        aircraft?flight.aircraft=aircraft:''
+        callsign?flight.callsign=callsign:'' 
+        origin?flight.origin=origin:''
+        destination?flight.destination=destination:''
+        entryWayPoint?flight.entryWayPoint=entryWayPoint:''
+        exitWayPoint?flight.exitWayPoint=exitWayPoint:''
         flight.save()
         .then(flight=>{
             res.status(200).json({message:"Flight updated Success !! ", flight:flight})
@@ -93,6 +94,7 @@ const deleteInternationalFlight=(req, res)=>{
 
 
 const createDomesticFlight = (req, res)=>{
+    console.log(req.body)
     let verify= flightValidator.internationalFlightValidator(req.body)
     let {dateTime,tailNumber,operator,icao,aircraft,callsign,origin,destination,entryWayPoint,exitWayPoint}= req.body
     if(!verify.isValid){
@@ -107,7 +109,7 @@ const createDomesticFlight = (req, res)=>{
         aircraft:aircraft,
         callsign:callsign,
         origin:origin,
-        destination:destination
+        destination:destination,
     }).save()
     .then(flight=>{
         res.status(200).json({message:"Domestic flight Created ", flight:flight})
@@ -132,20 +134,22 @@ const getDomesticFlight= (req, res)=>{
 }
 
 const editDomesticFlight = (req, res)=>{
-    let {operator,icao,aircraft,callsign,origin,destination,entryWayPoint,exitWayPoint}= req.body
+    let {dateTime, tailNumber,operator,icao,aircraft,callsign,origin,destination,entryWayPoint,exitWayPoint}= req.body
     if(!req.params.id){
         return res.status(400).json({message:"No id flight founded in params"})
     }
     domesticFlightModel.findByIdAndUpdate(req.params.id)
     .then(flight=>{
-        flight.operator=operator
-        flight.icao=icao
-        flight.aircraft=aircraft
-        flight.callsign=callsign
-        flight.origin=origin
-        flight.destination=destination
-        flight.entryWayPoint=entryWayPoint
-        flight.exitWayPoint=exitWayPoint
+        tailNumber?flight.tailNumber=tailNumber:''
+        dateTime?flight.dateTime=dateTime:''
+        operator?flight.operator=operator:''
+        icao?flight.icao=icao:''
+        aircraft?flight.aircraft=aircraft:''
+        callsign?flight.callsign=callsign:''
+        origin?flight.origin=origin:''
+        destination?flight.destination=destination:''
+        entryWayPoint?flight.entryWayPoint=entryWayPoint:''
+        exitWayPoint?flight.exitWayPoint=exitWayPoint:''
         flight.save()
         .then(flight=>{
             res.status(200).json({message:"Flight updated Success !! ", flight:flight})
